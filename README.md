@@ -1,5 +1,10 @@
 # CodeWars_CodeChallenges_andMore
 
+CodeFights
+Grider Class
+Bootcamp ones
+
+
 5 kyu
 384
 Replace reg ex test match 
