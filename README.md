@@ -5,6 +5,48 @@ Grider Class
 Bootcamp ones
 
 
+Feb 2 - 2019
+https://www.codewars.com/kata/equal-sides-of-an-array/train/javascript
+function findEvenIndex(arr)
+{
+  // iterator
+  let i = 0;
+  // track results of sums and comparisons
+  let leftSideSum = 0;
+  let rightSideSum = 0;
+  let tempLeftSideArr = [];
+  let tempRightSideArr = [];
+  let indexMatches = [];
+  let noMatch = false;
+  // helper function
+  const reducer = (accumulator, currentValue) => accumulator + currentValue;
+
+  // just loop over the given array 
+  while(i < arr.length){
+
+  // make a copy of each side of the array with a pivot index 
+  tempLeftSideArr  = arr.slice(0, i)
+  tempRightSideArr = arr.slice(i+1)
+  
+  // sum each copy of each side with reduce and if empty array return 0 
+  leftSideSum  =  tempLeftSideArr  == 0 ? 0 : tempLeftSideArr.reduce(reducer);
+  rightSideSum =  tempRightSideArr == 0 ? 0 : tempRightSideArr.reduce(reducer);
+  
+  // compare the 2 sums and push index into matches arr if match
+  rightSideSum === leftSideSum ? indexMatches.push(i): null;
+    
+    i++
+  }  
+    
+ if(indexMatches.length < 1){
+  // return -1 as directed if there are NO matches in matches arr
+   return -1;
+ }
+   // return the minimum value in the index matches arr
+   return Math.min(...indexMatches)
+}
+
+
 5 kyu
 384
 Replace reg ex test match 
